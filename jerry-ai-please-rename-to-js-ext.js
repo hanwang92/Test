@@ -24,7 +24,7 @@ class RangeList {
          || range[1] >= this.rangeArr[i][0] && range[1] <= this.rangeArr[i][1]
          || (range[0] <= this.rangeArr[i][0] && range[1] >= this.rangeArr[i][1])){
         this.rangeArr[i][0] = Math.min(range[0], this.rangeArr[i][0]);
-	    this.rangeArr[i][1] = Math.max(range[1], this.rangeArr[i][1]);
+        this.rangeArr[i][1] = Math.max(range[1], this.rangeArr[i][1]);
       }
     }
 
@@ -34,7 +34,7 @@ class RangeList {
       if(this.rangeArr[i][0] >= this.rangeArr[i+1][0] && this.rangeArr[i][0] <= this.rangeArr[i+1][1] 
          || this.rangeArr[i][1] >= this.rangeArr[i+1][0] && this.rangeArr[i][1] <= this.rangeArr[i+1][1]){
         this.rangeArr[i+1][0] = Math.min(this.rangeArr[i][0], this.rangeArr[i+1][0]);
-	    this.rangeArr[i+1][1] = Math.max(this.rangeArr[i][1], this.rangeArr[i+1][1]);
+        this.rangeArr[i+1][1] = Math.max(this.rangeArr[i][1], this.rangeArr[i+1][1]);
         this.rangeArr.splice(i, 1);
         i--;
       }
@@ -51,10 +51,10 @@ class RangeList {
       // split list entry into two entries when input range start/end points are within list entry
       if(range[0] >= this.rangeArr[i][0] && range[0] <= this.rangeArr[i][1] 
          && range[1] >= this.rangeArr[i][0] && range[1] <= this.rangeArr[i][1]){
-	    var r = [range[1], this.rangeArr[i][1]];
-	    this.rangeArr[i][1] = range[0];
+        var r = [range[1], this.rangeArr[i][1]];
+        this.rangeArr[i][1] = range[0];
         this.rangeArr.splice(i+1, 0, r);
-	    break;
+        break;
       }
       // remove list entry when its start/end points are within input range
       // else update the list entry start/end points
